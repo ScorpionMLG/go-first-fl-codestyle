@@ -6,6 +6,10 @@ import (
 	"strings"
 )
 
+func randint(min, max int) int {
+	return rand.Intn(max-min) + min
+}
+
 func attack(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(3, 5))
@@ -127,8 +131,4 @@ func main() {
 	char_class := choise_char_class()
 
 	fmt.Println(start_training(char_name, char_class))
-}
-
-func randint(min, max int) int {
-	return rand.Intn(max-min) + min
 }
